@@ -112,7 +112,7 @@ public class Horario_enfermeria extends JFrame{
                 String reto[] =new String [9];
                 int x=Content.getMes();
                 String y=Content.getAno();
-                int y1=3;
+                int y1=0;
 
                 if(y.equals("2015")){
                     y1=0;
@@ -145,7 +145,7 @@ public class Horario_enfermeria extends JFrame{
                 if(x==2&&y1==2){cont=8;}                                
                 reto=B.getArray(cont);
                 //aqui enviamos el fitnness
-                HorarrioGenerado ventana_Horario=new HorarrioGenerado(anio,turno, horario,reto,B.getTotal(),B.getTiempoFitnness(),B.getFitnness());
+                HorarrioGenerado ventana_Horario=new HorarrioGenerado(y,turno, horario,reto,B.getTotal(),B.getTiempoFitnness(),B.getFitnness());
                 
                 setVisible(false);
             }	

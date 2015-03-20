@@ -82,6 +82,7 @@ public class HorarrioGenerado extends JFrame {
 
         Atras = new JButton("Atras");
         Atras.setBounds(450,550, 100, 30);
+        System.out.println(fecha);
         
         this.setTitle("Horario Generado gestión "+fecha);
         this.setResizable(true);
