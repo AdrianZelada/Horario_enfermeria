@@ -111,37 +111,38 @@ public class Horario_enfermeria extends JFrame{
             if(evento.getActionCommand().equals("Generar")){              
                 String reto[] =new String [9];
                 int x=Content.getMes();
-                int y=Content.getAno();
+                String y=Content.getAno();
+                int y1=3;
 
-                if(y==0){
-                    anio="2015";
+                if(y.equals("2015")){
+                    y1=0;
                 }
-                if(y==1){
-                    anio="2016";
+                if(y.equals("2016")){                    
+                    y1=1;
                 }
-                if(y==2){
-                    anio="2017";
+                if(y.equals("2017")){                    
+                    y1=2;
                 }
-                if(y==3){
-                    anio="2018";
+                if(y.equals("2018")){                    
+                    y1=3;
                 }
-                if(y==4){
-                    anio="2019";
+                if(y.equals("2019")){                    
+                    y1=4;
                 }
 
-                if(y==5){
-                    anio="2020";
+                if(y.equals("202")){
+                    y1=5;
                 }
                 int cont=0;
-                if(x==0&&y==0){cont=0;}
-                if(x==1&&y==0){cont=1;}
-                if(x==2&&y==0){cont=2;}
-                if(x==0&&y==1){cont=3;}
-                if(x==1&&y==1){cont=4;}
-                if(x==2&&y==1){cont=5;}
-                if(x==0&&y==2){cont=6;}
-                if(x==1&&y==2){cont=7;}
-                if(x==2&&y==2){cont=8;}                                
+                if(x==0&&y1==0){cont=0;}
+                if(x==1&&y1==0){cont=1;}
+                if(x==2&&y1==0){cont=2;}
+                if(x==0&&y1==1){cont=3;}
+                if(x==1&&y1==1){cont=4;}
+                if(x==2&&y1==1){cont=5;}
+                if(x==0&&y1==2){cont=6;}
+                if(x==1&&y1==2){cont=7;}
+                if(x==2&&y1==2){cont=8;}                                
                 reto=B.getArray(cont);
                 //aqui enviamos el fitnness
                 HorarrioGenerado ventana_Horario=new HorarrioGenerado(anio,turno, horario,reto,B.getTotal(),B.getTiempoFitnness(),B.getFitnness());

@@ -20,7 +20,7 @@ public class PanelContent extends JPanel{
     JButton Generar;
     JButton Cancelar;
     JComboBox Combo_mes;
-    JComboBox Combo_ano;
+    JTextField Combo_ano;
 
     private Image imagen;
     
@@ -54,15 +54,15 @@ public class PanelContent extends JPanel{
         Anos_prog=new JLabel("Año a Programar");
         Anos_prog.setBounds(70, 70, 150, 20);
         Anos_prog.setFont(new java.awt.Font("Tahoma", 0, 16)); 
-        Combo_ano=new JComboBox();
+        Combo_ano=new JTextField();
         Combo_ano.setBounds(240, 70, 150, 20);
         Combo_ano.setFont(new java.awt.Font("Tahoma", 0, 16)); 
-        Combo_ano.addItem("2015");
+      /*  Combo_ano.addItem("2015");
         Combo_ano.addItem("2016");
         Combo_ano.addItem("2017");
         Combo_ano.addItem("2018");
         Combo_ano.addItem("2019");
-        Combo_ano.addItem("2020");
+        Combo_ano.addItem("2020");*/
         Combo_ano.setSize(180, 30);
         /*JLabel userLabel = new JLabel("Introduzca un año");
         userLabel.setBounds(10, 10, 80, 25);
@@ -110,7 +110,7 @@ public class PanelContent extends JPanel{
         return Combo_mes.getSelectedIndex();
     }
     
-    public int getAno (){
-        return Combo_ano.getSelectedIndex();
+    public String getAno (){
+        return Combo_ano.getText();
     }
 }
