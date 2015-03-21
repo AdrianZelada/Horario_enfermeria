@@ -92,13 +92,20 @@ public class Trabajadores extends JPanel{
         this.add(item);                     
         this.add(grupo);
         this.add(edit);
+        JPanel self=this;        
         edit.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {                
-                FormAddUpd form=new FormAddUpd(nombre.getText(),paterno.getText(),materno.getText(),"",cargo.getText(),item.getText(),id);
+                FormAddUpd form=new FormAddUpd(nombre.getText(),paterno.getText(),materno.getText(),"",cargo.getText(),item.getText(),id,nombre,paterno,materno,cargo,item);
             }          
         });
-    }    
+    } 
+    
+    private void SetActualizar(String nombre,String paterno,String materno){
+        this.nombre.setText(nombre);
+        this.paterno.setText(nombre);
+        this.materno.setText(nombre);
+    }
     
 }

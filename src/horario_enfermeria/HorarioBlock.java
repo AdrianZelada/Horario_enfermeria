@@ -69,7 +69,7 @@ public class HorarioBlock extends JPanel{
         edit.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {                
-                FormUpTurno ventana=new FormUpTurno(ObjTurno.getNombre(),ObjTurno.getInicio(), ObjTurno.getFin(),index+1);
+                FormUpTurno ventana=new FormUpTurno(ObjTurno.getNombre(),ObjTurno.getInicio(), ObjTurno.getFin(),index+1,Nombre,Inicio,Fin);
             }          
         });
         
