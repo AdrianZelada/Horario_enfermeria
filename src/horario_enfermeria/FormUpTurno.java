@@ -40,14 +40,14 @@ public class FormUpTurno extends JFrame{
     JButton Guardar;
     JButton Cancelar;
     
-    public FormUpTurno(String nomb,String inicio,String fin,int id,JLabel nombre_L,JLabel inicio_L,JLabel fin_L) throws HeadlessException {    
+    public FormUpTurno(String nomb,String inicio,String fin,int id,HorarioBlock Content) throws HeadlessException {    
         try{
-            inicializar(nomb,inicio,fin,id,nombre_L,inicio_L,fin_L);     
+            inicializar(nomb,inicio,fin,id,Content);     
         }catch (Exception e) {
             e.printStackTrace();
         } 
     }
-    public void inicializar (String nomb,String inicios,String fins,int id,JLabel nombre_L,JLabel inicio_L,JLabel fin_L){
+    public void inicializar (String nomb,String inicios,String fins,int id,HorarioBlock Content){
         this.setTitle("Formulario.");
         this.setVisible(true);
         //this.setResizable(false);
@@ -105,9 +105,8 @@ public class FormUpTurno extends JFrame{
                     ConexionBD.UpdateTurno(nombre,inicio,fin,id);
                     JOptionPane.showMessageDialog(null, "Datos Actualizados", "Confirmacion", JOptionPane.DEFAULT_OPTION);
                     setVisible(false);
-                    nombre_L.setText(nombre);
-                    inicio_L.setText(inicio);
-                    fin_L.setText(fin);
+                    
+                    Content.ActualizarView(nombre, inicio, fin);                    
                 }
             }          
         });

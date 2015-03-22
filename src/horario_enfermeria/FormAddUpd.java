@@ -45,14 +45,14 @@ public class FormAddUpd extends JFrame{
     JButton Guardar;
     JButton Cancelar;
     
-    public FormAddUpd(String nomb,String Ap_1,String Ap_2,String fecha,String carg,String ti_contra,int id,JLabel nombre_L,JLabel paterno_L,JLabel materno_L,JLabel cargo_L,JLabel item_L) {    
+    public FormAddUpd(String nomb,String Ap_1,String Ap_2,String fecha,String carg,String ti_contra,int id,Trabajadores content) {    
         try{
-            inicializar(nomb,Ap_1,Ap_2,carg,ti_contra,id,nombre_L,paterno_L,materno_L,cargo_L,item_L);     
+            inicializar(nomb,Ap_1,Ap_2,carg,ti_contra,id,content);     
         }catch (Exception e) {
             e.printStackTrace();
         } 
     }
-    public void inicializar (String nomb,String Ap_1,String Ap_2,String carg,String ti_contra,int id,JLabel nombre_L,JLabel paterno_L,JLabel materno_L,JLabel cargo_L,JLabel item_L){
+    public void inicializar (String nomb,String Ap_1,String Ap_2,String carg,String ti_contra,int id,Trabajadores content){
         this.setTitle("Formulario.");
         this.setVisible(true);
         //this.setResizable(false);
@@ -133,12 +133,8 @@ public class FormAddUpd extends JFrame{
                     String contrato=T_contrato.getText();
                     ConexionBD.UpdateEnfermera(nombre,paterno,materno,fecha,cargo,contrato,id);
                     JOptionPane.showMessageDialog(null, "Datos Actualizados", "Confirmacion", JOptionPane.DEFAULT_OPTION);
-                    setVisible(false);                      
-                    nombre_L.setText(nombre);
-                    paterno_L.setText(paterno);
-                    materno_L.setText(materno);
-                    cargo_L.setText(cargo);
-                    item_L.setText(contrato);
+                    setVisible(false);     
+                    content.SetActualizar(nombre, paterno, materno, cargo, contrato);              
                     
                 }
                 

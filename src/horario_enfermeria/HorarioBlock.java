@@ -65,11 +65,11 @@ public class HorarioBlock extends JPanel{
         Fin.setForeground(Color.WHITE);
         edit.setBounds(410,0,40,40);
         
-        
+        HorarioBlock self=this;
         edit.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {                
-                FormUpTurno ventana=new FormUpTurno(ObjTurno.getNombre(),ObjTurno.getInicio(), ObjTurno.getFin(),index+1,Nombre,Inicio,Fin);
+                FormUpTurno ventana=new FormUpTurno(ObjTurno.getNombre(),ObjTurno.getInicio(), ObjTurno.getFin(),index+1,self);
             }          
         });
         
@@ -82,6 +82,12 @@ public class HorarioBlock extends JPanel{
         this.add(Fin);
         this.add(edit);
         
+    }
+    
+    public void ActualizarView(String nombre_L,String inicio_L,String fin_l){
+        this.Nombre.setText(nombre_L);
+        this.Inicio.setText(inicio_L);
+        this.Fin.setText(fin_l);
     }
 }
 
